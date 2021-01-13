@@ -9,14 +9,25 @@ app = Flask(__name__)
 
 @app.route('/pogasall', methods=['GET'])
 def rut():
-  u=request.args.get('a',default=0,type=str)
-  u="ievadita vertiba: "+u
-  return render_template('sveikaPasaule.html', vards="ha",rezultats=u)
+  aa=request.args.get('a',default=0,type=str)
+  bb=request.args.get('b', default=0, type=str)
+  a=int(aa)
+  b=int(bb)
+  Sar=[]
+  for k in range(a):
+    for j in range(b):
+      P=2*(k+1+j+1)
+      S=(k+1)*(j+1)
+      rinda="Mala a ir "
+      rinda=rinda+str(k+1)+", mala b ir "+str(j+1)+"; "
+      rinda=rinda+"perimetrs(P)="+str(P)+" laukums(S)="+str(S)
+      Sar.append(rinda)
+  return render_template('sveikaPasaule.html', vards="Egil",rezultats=Sar)
 
 
 @app.route('/pogas')
 def pogas():
-  return render_template('pogas.html',vards="poga")
+  return render_template('pogas.html', rezultats="rezits")
 
 @app.route('/a',methods=['GET'])
 def pogasall():

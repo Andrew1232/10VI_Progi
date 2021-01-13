@@ -2,6 +2,10 @@
 <html>
   <body>
     <h1>Sveiks! {{ vards }}</h1>
-    <p>{{rezultats}}</p>
+    <h2>Seit ir rezultati</h2>
+
+    {%for com in rezultats %}
+      <p>{{com}}</p>
+    {% endfor %}
   </body>
 </html>

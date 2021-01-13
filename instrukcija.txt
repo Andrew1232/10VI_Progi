@@ -1,5 +1,5 @@
 powershell ievadi faila lokaciju
-cd/ ""
-python .\galva.python
+cd ""
+python .\galva.py
 palaid chrome
 ievadi izdoto ciparu
